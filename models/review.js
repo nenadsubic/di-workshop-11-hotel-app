@@ -5,3 +5,4 @@ class Review {
         this.date = date
     }
 }
+module.exports = Review

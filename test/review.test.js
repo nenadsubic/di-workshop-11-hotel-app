@@ -3,19 +3,19 @@ const expect = chai.expect;
 
 var Review = require('../models/review')
 
-describe('eview', function () {
+describe('Review', function () {
     describe('constructor', function () {
-        it('sets the name attribute from its inputs', function () {
-            var review = new Review("Hilton Metropole", "London")
-            expect(review.name).to.equal("Hilton Metropole")
+        it('returns the rating given in review', function () {
+            var review = new Review(5, "friendly staff, very clean", "01.01.2018")
+            expect(review.rating).to.equal(5)
         })
-        it('sets the city attribute from its inputs', function () {
-            var review = new Review("Hilton Metropole", "London")
-            expect(review.city).to.equal("London")
+        it('returns the comment for the review', function () {
+            var review = new Review(5, "friendly staff, very clean", "01.01.2018")
+            expect(review.text).to.equal("friendly staff, very clean")
         })
-        it('sets the review attribute to an empty array', function () {
-            var review = new Review("Hilton Metropole", "London")
-            expect(hotel.reviews).to.deep.equal([])
+        it('returns the date that the review was written', function () {
+            var review = new Review(5, "friendly staff, very clean", "01.01.2018")
+            expect(review.date).to.equal("01.01.2018")
         })
     })
-}) 
+})
